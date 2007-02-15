@@ -1,20 +1,20 @@
-# Before `make install' is performed this script should be runnable with
-# `make test'. After `make install' it should work as `perl test.pl'
-
-######################### We start with some black magic to print on failure.
-
-# Change 1..1 below to 1..last_test_to_print .
-# (It may become useful if the test is moved to ./t subdirectory.)
-
-BEGIN { $| = 1; print "1..1\n"; }
+BEGIN { $| = 1; print "1..5\n"; }
 END {print "not ok 1\n" unless $loaded;}
-use List::Member;
-$loaded = 1;
+use List::Member 0.03;
+our $loaded=1;
 print "ok 1\n";
 
-######################### End of black magic.
+my $target = 'bar';
+my @look_in = ('foo','baz','bar','etc');
 
-# Insert your test code below (better if it prints "ok 13"
-# (correspondingly "not ok 13") depending on the success of chunk 13
-# of the test code):
+print "not " unless member('foo',@look_in) +1;
+print "ok 2\n";
 
+print "not " unless member('foo',@look_in) >= 0;
+print "ok 3\n";
+
+print "not " unless member('tikkumolam',@look_in) eq nota_member();
+print "ok 4\n";
+
+print "not " unless isa_member('foo',@look_in);
+print "ok 5\n";

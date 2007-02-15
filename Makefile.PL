@@ -3,6 +3,7 @@ use ExtUtils::MakeMaker;
 # the contents of the Makefile that is written.
 WriteMakefile(
     'NAME'		=> 'List::Member',
-    'VERSION_FROM'	=> 'Member.pm', # finds $VERSION
+    'VERSION_FROM'	=> 'List/Member.pm', # finds $VERSION
     'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
+    AUTHOR	=> 'Lee Goddard (lgoddard-at-cpan.org)',
 );

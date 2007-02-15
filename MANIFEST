@@ -1,5 +1,6 @@
 Changes
 Makefile.PL
 MANIFEST
-Member.pm
+List/Member.pm
 test.pl
+META.yml                                 Module meta-data (added by MakeMaker)

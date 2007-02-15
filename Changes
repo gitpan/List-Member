@@ -4,3 +4,10 @@ Revision history for Perl extension List::Member.
 	- original version; created by h2xs 1.20 with options
 		-Xcfn List::Member
 
+0.02  2001-08-14
+	- POD updated
+
+0.03  2007-02-15
+	- Default not-a-member indicator ($NEG) set to -1, as POD describes
+	- Added nota_member(), isa_member, both exported.
+	- Updated test and POD
