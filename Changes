@@ -11,3 +11,7 @@ Revision history for Perl extension List::Member.
 	- Default not-a-member indicator ($NEG) set to -1, as POD describes
 	- Added nota_member(), isa_member, both exported.
 	- Updated test and POD
+
+0.04  2007-03-22
+	- Updated test and POD, again.
+	  Excuse: five family illness in one month. Phew.

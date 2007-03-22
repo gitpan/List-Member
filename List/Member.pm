@@ -8,7 +8,7 @@ use Carp ();
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(&member &nota_member);
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 our $NEG = -1;
 
 sub nota_member { return $NEG }
@@ -34,21 +34,24 @@ List::Member - PROLOG's member/2: return index of $x in @y.
   use List::Member;
   my $target = 'bar';
   my @look_in = ('foo','baz','bar','etc');
-  warn "It's a member of the array"
-  	if member('bar',@look_in) +1;
-  warn "It's a member of the array"
-	if member('bar',@look_in) >= 0;
 
-  warn "It's not a member of the array"
-    if member('tikkumolam',@look_in) eq nota_member();
+  warn "It is a member of the list" if member('bar',@look_in) +1;
+  warn "It is a member of the list" if member('bar',@look_in) >= 0;
+
+  warn "It is not a member of list" if member('tikkumolam',@look_in) eq nota_member();
 
 =head1 DESCRIPTION
 
 A tiny routine to achieve the same effect as PROLOG's C<member/2>.
 
 Returns the index of supplied scalar in supplied array, or returns the
-value of the package's C<$NEG> scalar.  This can be
-over-ridden for the case when the target is the same as the default C<-1>.
+value of the package's C<$NEG> scalar.  This can be over-ridden for the case
+when the target is the same as the default C<-1>:
+
+	$List::Member::NEG = 'not_a_member';
+
+In the above case, the first two example calls in the POD would need to be
+updated.
 
 =head1 EXPORT
 
