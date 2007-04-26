@@ -1,7 +1,8 @@
 BEGIN { $| = 1; print "1..5\n"; }
 END {print "not ok 1\n" unless $loaded;}
-use List::Member 0.04;
+use List::Member;
 our $loaded=1;
+print "# Version ".$List::Member::VERSION."\n";
 print "ok 1\n";
 
 my $target = 'bar';

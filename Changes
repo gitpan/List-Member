@@ -15,3 +15,6 @@ Revision history for Perl extension List::Member.
 0.04  2007-03-22
 	- Updated test and POD, again.
 	  Excuse: five family illness in one month. Phew.
+
+0.041  2007-04-26
+	- Version number was wrong. Bah.

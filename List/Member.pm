@@ -8,7 +8,7 @@ use Carp ();
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(&member &nota_member);
-our $VERSION = '0.04';
+our $VERSION = '0.041';
 our $NEG = -1;
 
 sub nota_member { return $NEG }
