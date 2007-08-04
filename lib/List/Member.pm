@@ -8,7 +8,7 @@ use Carp ();
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(&member &nota_member);
-our $VERSION = '0.041';
+our $VERSION = '0.042';
 our $NEG = -1;
 
 sub nota_member { return $NEG }
@@ -83,3 +83,4 @@ This module is made available under the same terms as Perl.
 perl(1).
 
 =cut
+
