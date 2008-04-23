@@ -21,3 +21,6 @@ Revision history for Perl extension List::Member.
 
 0.042  Sat Aug  4 18:33:59 2007
 	- Repacked.
+
+0.043  23 April 2008 20:30
+	- Accept 0 arg. Amazed it didn't.

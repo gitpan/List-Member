@@ -7,11 +7,10 @@ NAME
 SYNOPSIS
       use List::Member;
       my $target = 'bar';
-      my @look_in = ('foo','baz','bar','etc');
-
+      my @look_in = ('foo','baz','bar','etc', 0);
       warn "It is a member of the list" if member('bar',@look_in) +1;
       warn "It is a member of the list" if member('bar',@look_in) >= 0;
-
+      warn "Zero is a member of the list" if member('0',@look_in) >= 0;
       warn "It is not a member of list" if member('tikkumolam',@look_in) eq nota_member();
 
 DESCRIPTION
@@ -29,13 +28,11 @@ DESCRIPTION
 EXPORT
             member
 
-CHANGES
-    In version 0.02, "member" returned "undef" but documented -1. The
-    documentation was correct, and the code has been updated.
-
 THANKS
     Thanks to Benoit Thillaye du Boulay in France, John Day and Michael D
-    Black in Florida for pointing out bugs in the documentation.
+    Black in Florida for pointing out bugs in the documentation, and to
+    the Limbic~Region for pointing out the snivelling nits grumbling about
+    the lack of support for 0, without filing a bug report.
 
 INSTALLATION
 

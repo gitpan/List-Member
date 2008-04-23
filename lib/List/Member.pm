@@ -8,13 +8,14 @@ use Carp ();
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(&member &nota_member);
-our $VERSION = '0.042';
+our $VERSION = '0.043';
 our $NEG = -1;
 
 sub nota_member { return $NEG }
 
 sub member {
-	my $target = shift or Carp::croak "No target in member/2 ";
+	my $target = shift;
+	Carp::croak "No target in member/2 " unless defined $target;
 	for (0..$#_){
 		return $_ if $_[$_] eq $target;
 	}
