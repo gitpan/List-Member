@@ -1,13 +1,13 @@
 --- #YAML:1.0
 name:                List-Member
-version:             0.043
+version:             0.044
 abstract:            PROLOG's member/2: return index of  in @y.
 license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.3201
+author:              
+    - Lee Goddard <lgoddard-at-cpan.org>
+generated_by:        ExtUtils::MakeMaker version 6.44
 distribution_type:   module
 requires:     
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
-author:
-    - Lee Goddard <lgoddard-at-cpan.org>
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3

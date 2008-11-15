@@ -10,6 +10,7 @@ SYNOPSIS
       my @look_in = ('foo','baz','bar','etc', 0);
       warn "It is a member of the list" if member('bar',@look_in) +1;
       warn "It is a member of the list" if member('bar',@look_in) >= 0;
+      warn "It is a member of the list" if member('ar$',@look_in) >= 0;
       warn "Zero is a member of the list" if member('0',@look_in) >= 0;
       warn "It is not a member of list" if member('tikkumolam',@look_in) eq nota_member();
 
@@ -51,7 +52,7 @@ AUTHOR
     Lee Goddard <lgoddard@cpan.org>
 
 LICENCE AND COPYRIGHT
-    Copyright (C) 2000-2007 Lee Goddard. All Rights Reserved.
+    Copyright (C) 2000-2008 Lee Goddard. All Rights Reserved.
 
     This module is made available under the same terms as Perl.
 

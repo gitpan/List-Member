@@ -1,26 +1,23 @@
-BEGIN { $| = 1; print "1..6\n"; }
-END {print "not ok 1\n" unless $loaded;}
+use strict;
+use warnings;
 
+use Test::More tests => 7;
 use lib "../lib";
-use List::Member "0.043";
-our $loaded=1;
-print "# Version ".$List::Member::VERSION."\n";
-print "ok 1\n";
+
+use_ok( 'List::Member' => '0.044');
 
 my $target = 'bar';
 my @look_in = ('foo','baz','bar','etc',0);
 
-print "not " unless member('foo',@look_in) +1;
-print "ok 2\n";
+ok( member('foo',@look_in) +1, 'scalar +1');
 
-print "not " unless member('foo',@look_in) >= 0;
-print "ok 3\n";
+ok( member('foo',@look_in) >= 0, 'scalar >= 0');
 
-print "not " unless member('tikkumolam',@look_in) eq nota_member();
-print "ok 4\n";
+ok( member('tikkumolam',@look_in) eq nota_member(), 'nota_member');
 
-print "not " unless defined member('foo',@look_in);
-print "ok 5\n";
+ok( defined(member('foo',@look_in)), 'defined');
 
-print "not " unless member('0',@look_in) +1;
-print "ok 6\n";
+ok( member('0',@look_in) +1, '0 +1');
+
+ok( member(qr/oo$/,@look_in) +1, 're +1');
+

@@ -8,16 +8,22 @@ use Carp ();
 require Exporter;
 our @ISA = qw(Exporter);
 our @EXPORT = qw(&member &nota_member);
-our $VERSION = '0.043';
+our $VERSION = '0.044';
 our $NEG = -1;
 
 sub nota_member { return $NEG }
 
 sub member {
 	my $target = shift;
-	Carp::croak "No target in member/2 " unless defined $target;
-	for (0..$#_){
-		return $_ if $_[$_] eq $target;
+	Carp::croak 'No target in member/2 ' unless defined $target;
+	if (ref $target eq 'Regexp'){
+		for (0..$#_){
+			return $_ if $_[$_] =~ $target;
+		}
+	} else {
+		for (0..$#_){
+			return $_ if $_[$_] eq $target;
+		}
 	}
 	return $NEG;
 }
@@ -38,6 +44,7 @@ List::Member - PROLOG's member/2: return index of $x in @y.
 
   warn "It is a member of the list" if member('bar',@look_in) +1;
   warn "It is a member of the list" if member('bar',@look_in) >= 0;
+  warn "It is a member of the list" if member(qr/ar$/,@look_in) +1;
 
   warn "It is not a member of list" if member('tikkumolam',@look_in) eq nota_member();
 
